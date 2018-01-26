@@ -248,6 +248,136 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.csupj.com/2017/12/15/关于LightGBM/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Petoilej">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Petoilej">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Petoilej" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/12/15/关于LightGBM/" itemprop="url">
+                  关于LightGBM
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-15T11:03:00+08:00">
+                2017-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>GBDT是一个很受欢迎的机器学习算法，目前也有很多实现方法，比如说scikit-learn，LightGBM。其实关于梯度提升树不同的实现，本质就是所使用的损失函数和最小化损失函数的方法有所差异。<font color="#00ffff">而梯度提升算法的核心思想就是通过拟合负梯度值去学习决策树。</font>关于梯度提升树算法的流程如下图所示：</p>
+<center><br><img src="http://img.blog.csdn.net/20180126114552801" width="85%" height="85%"><br></center><br>而LightGBM与之前不同实现的区别在于，LightGBM提供一种数据类型的封装相对Numpy,Pandas,Array等数据对象而言节省了内存的使用，原因在于它只需要保存离散的直方图，LightGBM里默认的训练决策树时使用直方图算法，XGBoost里现在也提供了这一选项，不过默认的方法是对特征预排序，直方图算法是一种牺牲了一定的切分准确性而换取训练速度以及节省内存空间消耗的算法。<br><br>下面是LightGBM中GBDT的实现流程：<br>1.对所有特征进行分桶归一化(bin normalizing)<br><center><br><img src="http://img.blog.csdn.net/20180125171019412" width="65%" height="65%"><br></center><br>2.计算初始梯度值(初始值设置为0或随机值)<br><center><br><img src="http://img.blog.csdn.net/20180126114856225" width="65%" height="65%"><br></center><br>3.建立树<br>&nbsp;&nbsp;a)计算直方图<br><center><br><img src="http://img.blog.csdn.net/20180126114654549" width="75%" height="75%"><br><font color="#00ffff">在训练决策树计算切分点的增益时，预排序需要对每个样本的切分位置计算，所以时间复杂度是O(#data)。而LightGBM则是计算将样本离散化为直方图后的直方图切割位置的增益即可，时间复杂度为O(#bins),时间效率上大大提高了</font><br></center>
+
+<p>&nbsp;&nbsp;b)从直方图获得分裂收益，选取最佳分裂特征，分裂阈值</p>
+<center><br><img src="http://img.blog.csdn.net/20180126114720238" width="65%" height="65%"><br></center><br>&nbsp;&nbsp;c)建立根节点<br><center><br><img src="http://img.blog.csdn.net/20180126114740438" width="75%" height="75%"><br></center><br>&nbsp;&nbsp;d)根据最佳分裂特征，分裂阈值将样本切分<br><center><br><img src="http://img.blog.csdn.net/20180126114758436" width="65%" height="65%"><br><font color="#00ffff">直方图做差进一步提高效率，计算某一节点的叶节点的直方图可以通过将该节点的直方图与另一子节点的直方图做差得到，所以每次分裂只需计算分裂后样本数较少的子节点的直方图然后通过做差的方式获得另一个子节点的直方图，进一步提高效率。</font><br></center>
+
+<p>&nbsp;&nbsp;e)重复3.a-3.d选取最佳分裂叶子，分裂特征，分裂阈值，切分样本，直到达到叶子数目限制或者所有叶子不能分割<br>&nbsp;&nbsp;f)更新当前每个样本的输出值</p>
+<p>4.根据之前得到的树更新梯度值</p>
+<p>5.重复3,4直到所有的树都建立好</p>
+<p><strong><em>文中截图皆来源于网上，此番总结只是学习笔记。</em></strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://www.csupj.com/2017/10/22/开始的开始/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1050,7 +1180,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1101,7 +1231,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
