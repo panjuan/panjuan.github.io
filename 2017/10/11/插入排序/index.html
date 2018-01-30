@@ -87,21 +87,27 @@
 
 
 
-<meta name="description" content="八大算法性能比较">
+<meta name="description" content="八大算法性能比较
+
+1、直接插入排序想法：每次来一个目标数，就与已排好序的列表进行比较，依次向前，直到找到最合适的地方。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="插入排序">
 <meta property="og:url" content="http://www.csupj.com/2017/10/11/插入排序/index.html">
 <meta property="og:site_name" content="Petoilej">
-<meta property="og:description" content="八大算法性能比较">
+<meta property="og:description" content="八大算法性能比较
+
+1、直接插入排序想法：每次来一个目标数，就与已排好序的列表进行比较，依次向前，直到找到最合适的地方。">
 <meta property="og:image" content="http://img.blog.csdn.net/20180126154141067">
 <meta property="og:image" content="http://img.blog.csdn.net/20180126162220547">
 <meta property="og:image" content="http://img.blog.csdn.net/20180126162243688">
 <meta property="og:image" content="http://img.blog.csdn.net/20180126162413070">
 <meta property="og:image" content="http://img.blog.csdn.net/20180126162512486">
-<meta property="og:updated_time" content="2018-01-30T07:36:16.728Z">
+<meta property="og:updated_time" content="2018-01-30T07:38:37.791Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="插入排序">
-<meta name="twitter:description" content="八大算法性能比较">
+<meta name="twitter:description" content="八大算法性能比较
+
+1、直接插入排序想法：每次来一个目标数，就与已排好序的列表进行比较，依次向前，直到找到最合适的地方。">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20180126154141067">
 
 
@@ -370,10 +376,9 @@
       
 
       
-        <center><font color="#00ffff" size="5">八大算法性能比较</font><br><a id="more"></a><br><img src="http://img.blog.csdn.net/20180126154141067" width="95%" height="95%"><br></center>
+        <center><font color="#00ffff" size="5">八大算法性能比较</font><br><br><img src="http://img.blog.csdn.net/20180126154141067" width="95%" height="95%"><br></center>
 
-<p>1、直接插入排序<br>想法：每次来一个目标数，就与已排好序的列表进行比较，依次向前，直到找到最合适的地方。</p>
-<p>具体实例：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://img.blog.csdn.net/20180126162220547" alt="这里写图片描述"></p>
+<p>1、直接插入排序<br>想法：每次来一个目标数，就与已排好序的列表进行比较，依次向前，直到找到最合适的地方。<br><a id="more"></a><br>具体实例：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://img.blog.csdn.net/20180126162220547" alt="这里写图片描述"></p>
 <p>Python实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">def insert_sort(list1):</div><div class="line">    count=len(list1)</div><div class="line">    for i in range(1,count):</div><div class="line">        j=i-1</div><div class="line">        key=list1[i]</div><div class="line">        while j&gt;=0:</div><div class="line">            if list1[j]&gt;key:</div><div class="line">                list1[j+1]=list1[j]</div><div class="line">                list1[j]=key</div><div class="line">            j=j-1</div><div class="line">    print (list1)</div><div class="line">       </div><div class="line">a=[13,12,4,6,2]</div><div class="line">insert_sort(a)</div></pre></td></tr></table></figure></p>
 <p>输出结果：<br><img src="http://img.blog.csdn.net/20180126162243688" alt="这里写图片描述"></p>
 <p>2、希尔排序<br>想法：将待排序数组按照步长gap进行分组，然后将每组的元素利用直接插入排序的方法进行排序；每次将gap折半减小，循环上述操作；当gap=1时，利用直接插入，完成排序。</p>

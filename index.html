@@ -664,13 +664,14 @@
 
       
         
-          
-            <center><br><font color="#00ffff" size="5">八大排序算法</font><br><img src="http://img.blog.csdn.net/20180126154141067" width="85%" height="85%"><br></center><br>1、冒泡排序<br>想法：左右比较，大的往右移动，直到每一次排序后，大的都会到最右边。<br><br>具体实例：<br><img src="http://img.blog.csdn.net/20180127203734534" alt="这里写图片描述"><br><br>Python实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">def bubble_sort(list1):</div><div class="line">    count=len(list1)</div><div class="line">    for i in range(count):</div><div class="line">        for j in range(count-1):</div><div class="line">            if list1[j]&gt;list1[j+1]:</div><div class="line">                list1[j],list1[j+1]=list1[j+1],list1[j]</div><div class="line">    print (list1)</div><div class="line">    </div><div class="line">a=[3,6,4,2,11,10,5]</div><div class="line">bubble_sort(a)</div></pre></td></tr></table></figure><br><br>输出结果：<br><img src="http://img.blog.csdn.net/20180127203822425" alt="这里写图片描述"><br><br>2、快速排序<br>想法：以第一个数为基准数，左边和右边各设置一个指针，右边开始和基准数进行比较。<br><br>右边大，则右指针滑一个；<br>当右边小时，交换；<br>左边小，则左指针滑一个；<br>当左边大时，交换；&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;两边递归快排。<br><br>具体实例：<br><center><br><img src="http://img.blog.csdn.net/20180127204849385" width="55%" height="55%"><br></center>
-
-<p>Python实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">def quick_sort(list1,left,right):</div><div class="line">    if left &gt;= right:</div><div class="line">        return list1</div><div class="line">    key = list1[left]</div><div class="line">    low = left</div><div class="line">    high = right</div><div class="line">    while left&lt;right:</div><div class="line">        while left&lt;right and key&lt;=list1[right]:</div><div class="line">            right-=1</div><div class="line">            </div><div class="line">        list1[left]=list1[right]</div><div class="line">            </div><div class="line">        while left&lt;right and key&gt;=list1[left]:</div><div class="line">            left+=1</div><div class="line">        </div><div class="line">        list1[right]=list1[left]</div><div class="line">        </div><div class="line">    list1[right]=key</div><div class="line">    quick_sort(list1,low,left-1)</div><div class="line">    quick_sort(list1,left+1,high)</div><div class="line">    return  (list1)</div><div class="line">            </div><div class="line">a=[49,38,65,97,76,13,27,49]</div><div class="line">print (quick_sort(a,0,4))</div></pre></td></tr></table></figure></p>
-<p>输出结果：<br><img src="http://img.blog.csdn.net/20180127204944068" alt="这里写图片描述"></p>
-
-          
+          <center><br><font color=#00ffff size=5>八大排序算法</font><br><img src="http://img.blog.csdn.net/20180126154141067" width="85%" height="85%" /><br></center><br>1、冒泡排序<br>想法：左右比较，大的往右移动，直到每一次排序后，大的都会到最右边。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/13/交换排序/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -810,7 +811,9 @@
 
       
         
-          <center><font color=#00ffff size=5>八大算法性能比较</font><br>
+          <center><font color=#00ffff size=5>八大算法性能比较</font><br><br><img src="http://img.blog.csdn.net/20180126154141067" width="95%" height="95%" /><br></center>
+
+<p>1、直接插入排序<br>想法：每次来一个目标数，就与已排好序的列表进行比较，依次向前，直到找到最合适的地方。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/11/插入排序/#more" rel="contents">
@@ -957,20 +960,14 @@
 
       
         
-          
-            <p>带着满满的期待，我们十月一号出发，去了三亚。有妈咪、蕾蕾，还有我。还记得高中时期的我们，在安一中的好多个傍晚，我和蕾蕾、还有小黄黄，边散步边说着，等以后我们有钱了，就去那些向往的地方旅行。云南、三亚、厦门、杭州。。。数不胜数。</p>
-<center><br><img src="http://img.blog.csdn.net/20171011195731570" width="80%" height="50%"><br><strong>大自然的美好</strong><br></center><br>承诺就像蝴蝶，慢慢盘旋，落在我们的手中，而我们刚好也幸运地抓住了。虽然承诺的实现并不像当时想象得那么美好，旅行的途中有失望、拌嘴、疲惫，但更多的是深深的震撼、美的向往、还有疯子般的笑容、身边人的陪伴。<br><br><center><br><img src="http://img.blog.csdn.net/20171011200143399" width="70%" height="40%"><br><strong>看！她多么可爱！</strong><br></center>        
-
-<p>妈咪是第一次看海，看到海天一线，呈现出她小孩子般的喜悦，就知道这趟没白来，而且她是我们三人的开心果，有她在，这趟旅程轻松了不少。我还想带着最亲近的你们，在所有充斥着美的地方，留下好多好多脚印。岁月静好，是因为有你们在替我负重前行。不过我也知道，我的存在也是至关重要滴，填补了你们的空虚，希望我们一直这样相辅相成、互相爱护。</p>
-<center><br><img src="http://img.blog.csdn.net/20171011200320925" width="100%" height="40%"><br><strong>婀娜多姿</strong><br></center>        
-
-<p>我们的约定从未变过，只会越来越多。不过通过旅行，我们也更加了解此时的彼此。既是玩乐，也是经营感情的一种方式。这么久了，友情都慢慢化成了朋友中的亲情，就像很久没见的家人，有着刚见面时的小尴尬，在家呆个一天，就立马熟透了。那感觉真棒！我知道一直都在！希望我们携手一起走过七年之痒，走到白头！希望善良的我们都能获得尘世的幸福！哇咔咔！</p>
-<center><br><img src="http://img.blog.csdn.net/20171011200429949" width="80%"><br></center>        
-
-<p>这一趟自己的收获也颇丰富。想着自己以后试着来当她们的导游，带着她俩玩耍，因为她俩一个路痴一个懒虫，其实我也不太会认路，但是没办法，算是一种锻炼，哇咔咔！其实这也没什么难的！就是要保持终身学习的态度！</p>
-<p>写于回长沙的高铁上，完毕！灵感也是需要环境来感染的。</p>
-
-          
+          <p>带着满满的期待，我们十月一号出发，去了三亚。有妈咪、蕾蕾，还有我。还记得高中时期的我们，在安一中的好多个傍晚，我和蕾蕾、还有小黄黄，边散步边说着，等以后我们有钱了，就去那些向往的地方旅行。云南、三亚、厦门、杭州。。。数不胜数。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/08/三亚之旅/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1110,23 +1107,14 @@
 
       
         
-          
-            <p><strong>感知机</strong>（perceptron）是二类分类的线性分类模型，其输入为实例的特征向量，输出为实例的类别，取+1和-1二值。感知机1957年由Rosenblatt于提出，是<strong>神经网络</strong>和<strong>支持向量机</strong>的基础。</p>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>关于其定义，我还是认为看书比较清晰。而其背后含义，就像二维空间里一条线段一样，将正负样本分开；而感知机是在其特征空间找到一个超平面，将正负样本分开来。</p>
-<h2 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h2><ol>
-<li>学习策略就是定义损失函数并将损失函数极小化。</li>
-<li>损失函数的选择是误分类点到超平面的总距离。</li>
-</ol>
-<p>综合来看，感知机学习的策略是在假设空间中选取使损失函数式最小的模型参数<em>w</em>,<em>b</em>.</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h2 id="1、原始形式"><a href="#1、原始形式" class="headerlink" title="1、原始形式"></a>1、原始形式</h2><p><img src="http://img.blog.csdn.net/20170926202143051" alt="这里写图片描述"></p>
-<p>原始形式算法的解释：当一个实例点被误分类，即位于分离超平面的错误一侧时，则调整<em>w</em>,<em>b</em>的值，使得分离超平面向该误分类的一侧移动，以减少该误分类点与超平面间的距离，直至超平面越过该误分类点使其被正确分类。</p>
-<h2 id="2、对偶形式"><a href="#2、对偶形式" class="headerlink" title="2、对偶形式"></a>2、对偶形式</h2><p><img src="http://img.blog.csdn.net/20170926212222103" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20170926202430817" alt="这里写图片描述"></p>
-<p>对偶形式的基本想法是，将<em>w</em>,<em>b</em>表示为实例$x<em>{i} $和标记$y</em>{i}$的线性组合的形式，通过求解其系数而求得<em>w</em>,<em>b</em>.</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><img src="http://img.blog.csdn.net/20170926212543050" alt="这里写图片"></p>
-<p>下图是两种算法的手写分析过程：</p>
-<p><img src="http://img.blog.csdn.net/20170926212903481" alt="这里写图片描述"></p>
-
-          
+          <p><strong>感知机</strong>（perceptron）是二类分类的线性分类模型，其输入为实例的特征向量，输出为实例的类别，取+1和-1二值。感知机1957年由Rosenblatt于提出，是<strong>神经网络</strong>和<strong>支持向量机</strong>的基础。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/10/感知机/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1267,7 +1255,8 @@
       
         
           
-            <p>1、ssh master 切换<br>2、cd /ifs/home/ 到目录   cd ../ 反回上一级<br>3、ls 查看<br>4、vim c.py<br>5、vim编辑器正常退出   :q<br>6、qnodes  看空闲结点     df -h 检测目前磁盘的情况<br>7、mv we ../移除某个东西    rm sequences/ -r   删除某个东西    cp -r   源目录    指定目录<br>8、mkdir dssp<br>9、chmod a+x /o+x pro_data.pl      ./pro_data.pl<br>10、pwd 查看当前目录<br>11、top 动态显示当前耗费资源最多进程信息<br>12、ps -aux | grep panjuan  显示瞬时进程状态<br>13、nohup python 1.py  &amp;&gt;1.txt<br>14、kill  %1  杀死1进程         pkill -u pan     杀死关于pan的全部进程<br>15、jobs 当前</p>
+            <a id="more"></a> 
+<p>1、ssh master 切换<br>2、cd /ifs/home/ 到目录   cd ../ 反回上一级<br>3、ls 查看<br>4、vim c.py<br>5、vim编辑器正常退出   :q<br>6、qnodes  看空闲结点     df -h 检测目前磁盘的情况<br>7、mv we ../移除某个东西    rm sequences/ -r   删除某个东西    cp -r   源目录    指定目录<br>8、mkdir dssp<br>9、chmod a+x /o+x pro_data.pl      ./pro_data.pl<br>10、pwd 查看当前目录<br>11、top 动态显示当前耗费资源最多进程信息<br>12、ps -aux | grep panjuan  显示瞬时进程状态<br>13、nohup python 1.py  &amp;&gt;1.txt<br>14、kill  %1  杀死1进程         pkill -u pan     杀死关于pan的全部进程<br>15、jobs 当前</p>
 
           
         
@@ -1409,15 +1398,17 @@
 
       
         
-          
-            <p>当我们需要在不同的文件夹中将相对应的数据整合在一行时，可以用到此代码。</p>
+          <p>当我们需要在不同的文件夹中将相对应的数据整合在一行时，可以用到此代码。</p>
 <ul>
 <li>其中很多条件判断用于检查文件夹中各个文件的是否一一对应！</li>
-<li>并且既可以整合在同一文件夹下的不同文件中，也可以整合在同一文档里。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">#先整合diso和ss</div><div class="line">def together1(dir1,dir2,newdir):</div><div class="line">    listfile1=os.listdir(dir1)</div><div class="line">    listfile2=os.listdir(dir2)</div><div class="line">    for eachfile1 in listfile1:  </div><div class="line">        for eachfile2 in listfile2:</div><div class="line">                with open(dir1+&apos;/&apos;+eachfile1,&apos;r&apos;) as f1:</div><div class="line">                    lines1=f1.readlines()</div><div class="line">                    if eachfile2[0:5]==eachfile1[0:5]:</div><div class="line">                        with open(dir2+&apos;/&apos;+eachfile2,&apos;r&apos;) as f2:</div><div class="line">                            with open(newdir+&apos;/&apos;+eachfile1,&apos;w&apos;) as outfile:以文件夹中各个txt的形式                              </div><div class="line">                                 lines2=f2.readlines()                                 </div><div class="line">                                 for i in range(len(lines1)):      </div><div class="line">                                     line1=lines1[i].strip().split()#要非常注意此处 ,line1指的是每一行diso                             </div><div class="line">                                     line2=lines2[i].strip().split()#line2指的是每一行ss</div><div class="line">                                     if line1 !=[]:#判断是否有空行</div><div class="line">                                         if line2 !=[]:     </div><div class="line">                                             if line2[1] == line1[0]:#判断diso文件中的残基和ss文件中的残基要一一对应</div><div class="line">                                                 line1.extend(line2[2])</div><div class="line">                                                 a=line1[1:]#不取残基</div><div class="line">                                                 outfile.write(&apos; &apos;.join(a)+&apos;\n&apos;)</div><div class="line">                                                 #outfile.write(&apos; &apos;.join(line1)+&apos;\n&apos;)   </div><div class="line">                                             else:</div><div class="line">                                                 print (eachfile2+&apos; &apos;+&apos;has wrong line&apos;)  #就是长度对应不上的文件,将其打印出来</div><div class="line">                                                 break</div><div class="line">                                         else:</div><div class="line">                                             print (eachfile2+&apos; &apos;+&apos;has null line&apos;)</div><div class="line">                                             break</div><div class="line">                                     else:</div><div class="line">                                         print (eachfile1+&apos; &apos;+&apos;has null line&apos;)</div><div class="line">                                         break</div><div class="line">                                    </div><div class="line">dird=&apos;F:/aaaaaaaaaaaaaaaaa/Feature_window/9win_pssm&apos;</div><div class="line">dirs=&apos;F:/aaaaaaaaaaaaaaaaa/Test/CN_residue&apos;</div><div class="line">new=&apos;F:/aaaaaaaaaaaaaaaaa/Feature_window&apos;</div><div class="line">together1(dird,dirs,new)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+<li>并且既可以整合在同一文件夹下的不同文件中，也可以整合在同一文档里。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/28/Python _ 数据整合/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1700,18 +1691,14 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/09/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
