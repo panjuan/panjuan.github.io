@@ -87,14 +87,12 @@
 
 
 
-<meta name="description" content="GBDT是一个很受欢迎的机器学习算法，目前也有很多实现方法，比如说scikit-learn，LightGBM。其实关于梯度提升树不同的实现，本质就是所使用的损失函数和最小化损失函数的方法有所差异。而梯度提升算法的核心思想就是通过拟合负梯度值去学习决策树。关于梯度提升树算法的流程如下图所示：&amp;lt; !–more–&amp;gt; 
-而LightGBM与之前不同实现的区别在于，LightGBM提供一种数据类">
+<meta name="description" content="GBDT是一个很受欢迎的机器学习算法，目前也有很多实现方法，比如说scikit-learn，LightGBM。其实关于梯度提升树不同的实现，本质就是所使用的损失函数和最小化损失函数的方法有所差异。而梯度提升算法的核心思想就是通过拟合负梯度值去学习决策树。关于梯度提升树算法的流程如下图所示：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于LightGBM">
 <meta property="og:url" content="http://www.csupj.com/2017/12/15/关于LightGBM/index.html">
 <meta property="og:site_name" content="Petoilej">
-<meta property="og:description" content="GBDT是一个很受欢迎的机器学习算法，目前也有很多实现方法，比如说scikit-learn，LightGBM。其实关于梯度提升树不同的实现，本质就是所使用的损失函数和最小化损失函数的方法有所差异。而梯度提升算法的核心思想就是通过拟合负梯度值去学习决策树。关于梯度提升树算法的流程如下图所示：&amp;lt; !–more–&amp;gt; 
-而LightGBM与之前不同实现的区别在于，LightGBM提供一种数据类">
+<meta property="og:description" content="GBDT是一个很受欢迎的机器学习算法，目前也有很多实现方法，比如说scikit-learn，LightGBM。其实关于梯度提升树不同的实现，本质就是所使用的损失函数和最小化损失函数的方法有所差异。而梯度提升算法的核心思想就是通过拟合负梯度值去学习决策树。关于梯度提升树算法的流程如下图所示：">
 <meta property="og:image" content="http://img.blog.csdn.net/20180126114552801">
 <meta property="og:image" content="http://img.blog.csdn.net/20180125171019412">
 <meta property="og:image" content="http://img.blog.csdn.net/20180126114856225">
@@ -102,11 +100,10 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20180126114720238">
 <meta property="og:image" content="http://img.blog.csdn.net/20180126114740438">
 <meta property="og:image" content="http://img.blog.csdn.net/20180126114758436">
-<meta property="og:updated_time" content="2018-01-30T07:27:22.131Z">
+<meta property="og:updated_time" content="2018-01-30T07:29:40.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于LightGBM">
-<meta name="twitter:description" content="GBDT是一个很受欢迎的机器学习算法，目前也有很多实现方法，比如说scikit-learn，LightGBM。其实关于梯度提升树不同的实现，本质就是所使用的损失函数和最小化损失函数的方法有所差异。而梯度提升算法的核心思想就是通过拟合负梯度值去学习决策树。关于梯度提升树算法的流程如下图所示：&amp;lt; !–more–&amp;gt; 
-而LightGBM与之前不同实现的区别在于，LightGBM提供一种数据类">
+<meta name="twitter:description" content="GBDT是一个很受欢迎的机器学习算法，目前也有很多实现方法，比如说scikit-learn，LightGBM。其实关于梯度提升树不同的实现，本质就是所使用的损失函数和最小化损失函数的方法有所差异。而梯度提升算法的核心思想就是通过拟合负梯度值去学习决策树。关于梯度提升树算法的流程如下图所示：">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20180126114552801">
 
 
@@ -375,7 +372,7 @@
       
 
       
-        <p>GBDT是一个很受欢迎的机器学习算法，目前也有很多实现方法，比如说scikit-learn，LightGBM。其实关于梯度提升树不同的实现，本质就是所使用的损失函数和最小化损失函数的方法有所差异。<font color="#00ffff">而梯度提升算法的核心思想就是通过拟合负梯度值去学习决策树。</font>关于梯度提升树算法的流程如下图所示：<br>&lt; !–more–&gt; </p>
+        <p>GBDT是一个很受欢迎的机器学习算法，目前也有很多实现方法，比如说scikit-learn，LightGBM。其实关于梯度提升树不同的实现，本质就是所使用的损失函数和最小化损失函数的方法有所差异。<font color="#00ffff">而梯度提升算法的核心思想就是通过拟合负梯度值去学习决策树。</font>关于梯度提升树算法的流程如下图所示：<br><a id="more"></a> </p>
 <center><br><img src="http://img.blog.csdn.net/20180126114552801" width="85%" height="85%"><br></center><br>而LightGBM与之前不同实现的区别在于，LightGBM提供一种数据类型的封装相对Numpy,Pandas,Array等数据对象而言节省了内存的使用，原因在于它只需要保存离散的直方图，LightGBM里默认的训练决策树时使用直方图算法，XGBoost里现在也提供了这一选项，不过默认的方法是对特征预排序，直方图算法是一种牺牲了一定的切分准确性而换取训练速度以及节省内存空间消耗的算法。<br><br>下面是LightGBM中GBDT的实现流程：<br>1.对所有特征进行分桶归一化(bin normalizing)<br><center><br><img src="http://img.blog.csdn.net/20180125171019412" width="65%" height="65%"><br></center><br>2.计算初始梯度值(初始值设置为0或随机值)<br><center><br><img src="http://img.blog.csdn.net/20180126114856225" width="65%" height="65%"><br></center><br>3.建立树<br>&nbsp;&nbsp;a)计算直方图<br><center><br><img src="http://img.blog.csdn.net/20180126114654549" width="75%" height="75%"><br><font color="#00ffff">在训练决策树计算切分点的增益时，预排序需要对每个样本的切分位置计算，所以时间复杂度是O(#data)。而LightGBM则是计算将样本离散化为直方图后的直方图切割位置的增益即可，时间复杂度为O(#bins),时间效率上大大提高了</font><br></center>
 
 <p>&nbsp;&nbsp;b)从直方图获得分裂收益，选取最佳分裂特征，分裂阈值</p>
