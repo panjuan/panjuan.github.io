@@ -1705,7 +1705,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3cc232;
+  background: #f0ffe5;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2542,6 +2542,6 @@ body {
   min-height: 500px;
 }
 .header {
-  background: #eee;
+  background: #cdf;
   opacity: 1;
 }
